@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  vault-init:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-04-16T19:54:44.561577898Z"
+    description: A Helm chart for Kubernetes
+    digest: f5dfeccc958b0080ed6f68d256bb1b7c003352ccdb1042e6ee23dbbdca66b0c0
+    name: vault-init
+    type: application
+    urls:
+    - vault-init-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-04-16T19:54:44.560791831Z"
