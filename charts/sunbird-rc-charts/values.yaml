@@ -6,12 +6,12 @@ global:
     port: "5432"
     vendor: "postgres"
   keycloak:
-    database: "registryrc"
+    database: "registry"
     admin:
       username: "admin"
     proxy_forwarding: true
   registry:
-    database: "registryrc"
+    database: "registry"
     search_provider: "dev.sunbirdrc.registry.service.NativeSearchService"
     signature_provider: "dev.sunbirdrc.registry.service.impl.SignatureV2ServiceImpl"
     sso:
