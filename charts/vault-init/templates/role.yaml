@@ -4,6 +4,6 @@ metadata:
   name: pod-exec-role
 rules:
 - apiGroups: [""]
-  resources: ["pods", "pods/exec"]
+  resources: ["pods", "pods/exec", "secrets"]
   verbs: ["create", "get", "list"]
 
