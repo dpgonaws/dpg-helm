@@ -12,6 +12,8 @@ spec:
         {{- include "vault-init.selectorLabels" . | nindent 8 }}
         app.kubernetes.io/name: vault-init-job
         sidecar.istio.io/inject: "false"
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/managed-by: {{ .Release.Service }} 
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
