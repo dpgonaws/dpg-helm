@@ -1,9 +1,20 @@
 apiVersion: v1
 entries:
+  sunbird_rc_charts:
+  - apiVersion: v2
+    appVersion: 0.0.13
+    created: "2024-04-17T09:57:05.106177548Z"
+    description: A Helm chart for Sunbird RC
+    digest: 3ee78abe38b3519b04c2201ec5d8afff827b9297307ab692e5ed05951d2b9982
+    name: sunbird_rc_charts
+    type: application
+    urls:
+    - sunbird_rc_charts-0.0.1.tgz
+    version: 0.0.1
   vault-init:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-04-17T06:58:49.076099718Z"
+    created: "2024-04-17T09:57:05.10677384Z"
     description: A Helm chart for Kubernetes
     digest: 4e1b05229b961bb0e0d7bd475ca8ee292815c805a3772113a3fc376b81b232f7
     name: vault-init
@@ -11,4 +22,4 @@ entries:
     urls:
     - vault-init-0.1.0.tgz
     version: 0.1.0
-generated: "2024-04-17T06:58:49.075296464Z"
+generated: "2024-04-17T09:57:05.098088883Z"
