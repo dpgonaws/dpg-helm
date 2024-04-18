@@ -42,7 +42,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: vault-cluster-token
-                  key: ROOT_TOKEN
+                  key: ROOT_TOKEN          
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
