@@ -1,0 +1,7 @@
+redis:
+  enabled: true
+  namespace: testredis
+
+softhsm:
+  enabled: true
+  namespace: testsofthsm
