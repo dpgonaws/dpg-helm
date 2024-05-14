@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  #  name: {{ .Release.Name }}-configmap
+  name: esignet-default-properties
+data:
+  {{- range $path, $_ := .Files.Glob "files/*" }}
+  {{ base $path }}: |-
+    {{ $.Files.Get $path | nindent 4 }}
+  {{- end }}
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+  # name: esignet-default-properties
+data:
+  {{- range $path, $_ := .Files.Glob "files/*" }}
+  {{ base $path }}: |-
+    {{ $.Files.Get $path | nindent 4 }}
+  {{- end }}
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: global
+data:
+  installation-name: sandbox
+  installation-domain: sandbox.demodpgs.net
+  mosip-version: develop
+  mosip-api-host: api.sandbox.demodpgs.net
+  mosip-api-internal-host: api-internal.sandbox.demodpgs.net
+  mosip-prereg-host: prereg.sandbox.demodpgs.net
+  mosip-activemq-host: activemq.sandbox.demodpgs.net
+  mosip-kibana-host: kibana.sandbox.demodpgs.net
+  mosip-admin-host: admin.sandbox.demodpgs.net
+  mosip-regclient-host: regclient.sandbox.demodpgs.net
+  mosip-minio-host: minio.sandbox.demodpgs.net
+  mosip-kafka-host: kafka.sandbox.demodpgs.net
+  mosip-iam-external-host: iam.sandbox.demodpgs.net
+  mosip-postgres-host: postgres.sandbox.demodpgs.net
+  mosip-pmp-host: pmp.sandbox.demodpgs.net
+  mosip-resident-host: resident.sandbox.demodpgs.net
+  mosip-compliance-host: compliance.sandbox.demodpgs.net
+  mosip-esignet-host: esignet.sandbox.demodpgs.net
+  mosip-smtp-host: smtp.sandbox.demodpgs.net
+  mosip-singup-host: signup.sandbox.demodpgs.net
+  is_glowroot_env: absent
+  SPRING_CONFIG_NAME: esignet
+  SPRING_CONFIG_LOCATION: /home/mosip/esignet-default.properties
+
