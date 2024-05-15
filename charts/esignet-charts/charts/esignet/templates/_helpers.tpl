@@ -1,62 +1,60 @@
 {{/*
-Expand the name of the chart.
+Return the proper  image name
 */}}
-{{- define "esignet.name" -}}
-{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
-{{- end }}
+{{- define "esignet.image" -}}
+{{ include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
+{{- end -}}
 
 {{/*
-Create a default fully qualified app name.
-We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
-If release name contains chart name it will be used as a full name.
+Return the proper image name (for the init container volume-permissions image)
 */}}
-{{- define "esignet.fullname" -}}
-{{- if .Values.fullnameOverride }}
-{{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
-{{- else }}
-{{- $name := default .Chart.Name .Values.nameOverride }}
-{{- if contains $name .Release.Name }}
-{{- .Release.Name | trunc 63 | trimSuffix "-" }}
-{{- else }}
-{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" }}
-{{- end }}
-{{- end }}
-{{- end }}
+{{- define "esignet.volumePermissions.image" -}}
+{{- include "common.images.image" ( dict "imageRoot" .Values.volumePermissions.image "global" .Values.global ) -}}
+{{- end -}}
 
 {{/*
-Create chart name and version as used by the chart label.
+Return the proper Docker Image Registry Secret Names
 */}}
-{{- define "esignet.chart" -}}
-{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
-{{- end }}
-
-{{/*
-Common labels
-*/}}
-{{- define "esignet.labels" -}}
-helm.sh/chart: {{ include "esignet.chart" . }}
-{{ include "esignet.selectorLabels" . }}
-{{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-{{- end }}
-app.kubernetes.io/managed-by: {{ .Release.Service }}
-{{- end }}
-
-{{/*
-Selector labels
-*/}}
-{{- define "esignet.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "esignet.name" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
-{{- end }}
+{{- define "esignet.imagePullSecrets" -}}
+{{- include "common.images.pullSecrets" (dict "images" (list .Values.image .Values.volumePermissions.image) "global" .Values.global) -}}
+{{- end -}}
 
 {{/*
 Create the name of the service account to use
 */}}
 {{- define "esignet.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create }}
-{{- default (include "esignet.fullname" .) .Values.serviceAccount.name }}
-{{- else }}
-{{- default "default" .Values.serviceAccount.name }}
+{{- if .Values.serviceAccount.create -}}
+    {{ default (printf "%s" (include "common.names.fullname" .)) .Values.serviceAccount.name }}
+{{- else -}}
+    {{ default "default" .Values.serviceAccount.name }}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Compile all warnings into a single message.
+*/}}
+{{- define "esignet.validateValues" -}}
+{{- $messages := list -}}
+{{- $messages := append $messages (include "esignet.validateValues.foo" .) -}}
+{{- $messages := append $messages (include "esignet.validateValues.bar" .) -}}
+{{- $messages := without $messages "" -}}
+{{- $message := join "\n" $messages -}}
+
+{{- if $message -}}
+{{-   printf "\nVALUES VALIDATION:\n%s" $message -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return podAnnotations
+*/}}
+{{- define "esignet.podAnnotations" -}}
+{{- if .Values.podAnnotations }}
+{{ include "common.tplvalues.render" (dict "value" .Values.podAnnotations "context" $) }}
 {{- end }}
+{{- if and .Values.metrics.enabled .Values.metrics.podAnnotations }}
+{{ include "common.tplvalues.render" (dict "value" .Values.metrics.podAnnotations "context" $) }}
 {{- end }}
+{{- end -}}
+
+
