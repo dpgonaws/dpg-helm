@@ -1,0 +1,18 @@
+apiVersion: v2
+dependencies:
+- name: common
+  repository: https://charts.bitnami.com/bitnami
+  tags:
+  - bitnami-common
+  version: 1.x.x
+description: A Helm chart to file server application.
+home: https://mosip.io
+keywords:
+- mosip
+- mock-relying-party-service
+maintainers:
+- email: info@mosip.io
+  name: MOSIP
+name: mock-relying-party-service
+type: application
+version: 0.9.2
