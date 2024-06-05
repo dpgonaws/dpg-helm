@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   artifactory:
   - apiVersion: v2
-    created: "2024-06-05T07:24:30.420658242Z"
+    created: "2024-06-05T07:50:01.311051433Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -26,7 +26,7 @@ entries:
     version: 12.0.2
   esignet:
   - apiVersion: v2
-    created: "2024-06-05T07:24:30.424092975Z"
+    created: "2024-06-05T07:50:01.314213308Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -34,7 +34,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP esignet module
-    digest: e09c90a4e598ec6d6e260c1cb9b22916b6aed20a92dc19ee398d7219d5223985
+    digest: b68520999958bf6b46d5e7e870cbb6bc56302822fc39f098a9953fdf5484207d
     home: https://mosip.io
     keywords:
     - mosip
@@ -47,23 +47,23 @@ entries:
     urls:
     - esignet-1.4.0.tgz
     version: 1.4.0
-  esignet-charts:
+  esignet-init:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T07:24:30.439671645Z"
+    created: "2024-06-05T07:50:01.315627692Z"
     description: A Helm chart for Kubernetes
-    digest: 0497014c20d7758c3c9da3063eb0647ae0c84274eaca4ec1747bd74c928af75a
-    name: esignet-charts
+    digest: ba303588cf14169b34062de4e516262d7539f8688d74696d2226bfec02ffd665
+    name: esignet-init
     type: application
     urls:
-    - esignet-charts-0.1.0.tgz
+    - esignet-init-0.1.0.tgz
     version: 0.1.0
   keycloak:
   - annotations:
       category: DeveloperTools
     apiVersion: v2
     appVersion: 16.1.1
-    created: "2024-06-05T07:24:30.451595301Z"
+    created: "2024-06-05T07:50:01.326868339Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -93,20 +93,82 @@ entries:
     urls:
     - keycloak-7.1.18.tgz
     version: 7.1.18
-  mosip:
+  keycloak-init:
   - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-06-05T07:24:30.46595769Z"
-    description: A Helm chart for Kubernetes
-    digest: 2a5a92edb0916876637ad24ff5b2d9f1df05f83a603580ec77ecfcb20b9727a0
-    name: mosip
+    appVersion: 1.2.0
+    created: "2024-06-05T07:50:01.330492726Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart for Kubernetes to initialize Keycloak  (updating for
+      test)
+    digest: c5e539e9f9c0b50125c1b467816d8623031bd129045d8604a4df5401cb89bc71
+    home: https://mosip.io
+    keywords:
+    - keycloak
+    - access-management
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: keycloak-init
     type: application
     urls:
-    - mosip-0.1.0.tgz
-    version: 0.1.0
+    - keycloak-init-12.0.1.tgz
+    version: 12.0.1
+  oidc-ui:
+  - apiVersion: v2
+    created: "2024-06-05T07:50:01.33484995Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart for MOSIP OIDC UI module
+    digest: dfbdf0f3f8e03f8fb2dad8aae4aeeb3689a0b2dbea591d7553c4134c111d1144
+    home: https://mosip.io
+    keywords:
+    - mosip
+    - oidc-ui
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: oidc-ui
+    type: application
+    urls:
+    - oidc-ui-1.4.0.tgz
+    version: 1.4.0
+  postgres-init:
+  - apiVersion: v2
+    appVersion: 1.2.0
+    created: "2024-06-05T07:50:01.337265181Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart for Kubernetes to initialize various Postgres DBs.
+    digest: 23945579da82a51337dae0e780d843845a344d9f28e3bed0e3005e375b419e24
+    home: https://mosip.io
+    keywords:
+    - postgres
+    - db
+    - database
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: postgres-init
+    type: application
+    urls:
+    - postgres-init-12.0.1.tgz
+    version: 12.0.1
   softhsm:
   - apiVersion: v2
-    created: "2024-06-05T07:24:30.468935255Z"
+    created: "2024-06-05T07:50:01.338965022Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -130,7 +192,7 @@ entries:
   sunbird-c-charts:
   - apiVersion: v2
     appVersion: 0.0.13
-    created: "2024-06-05T07:24:30.471606183Z"
+    created: "2024-06-05T07:50:01.341265403Z"
     description: A Helm chart for Sunbird RC
     digest: e390f2fb0758798f76bf1693dac1fbf23205528948cfbab33123a475fe29e864
     name: sunbird-c-charts
@@ -141,7 +203,7 @@ entries:
   sunbird-r-charts:
   - apiVersion: v2
     appVersion: 0.0.13
-    created: "2024-06-05T07:24:30.476425805Z"
+    created: "2024-06-05T07:50:01.34778504Z"
     description: A Helm chart for Sunbird RC
     digest: ff89976492f9ea3f8035b34d944505cb73a83c16ffbba9b8d849c0eb2d94c8d7
     name: sunbird-r-charts
@@ -152,7 +214,7 @@ entries:
   sunbird_rc_charts:
   - apiVersion: v2
     appVersion: 0.0.13
-    created: "2024-06-05T07:24:30.483891103Z"
+    created: "2024-06-05T07:50:01.353370322Z"
     description: A Helm chart for Sunbird RC
     digest: f407084a57cd7f945fe345b526151aef32fb91895c49ff7dd39730df73a89c08
     name: sunbird_rc_charts
@@ -163,7 +225,7 @@ entries:
   vault-init:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T07:24:30.484460638Z"
+    created: "2024-06-05T07:50:01.353925626Z"
     description: A Helm chart for Kubernetes
     digest: 75642f56bc737b214859480f91ee9cb0d1b0bb7e1674ee684ba0138f861e210b
     name: vault-init
@@ -171,4 +233,4 @@ entries:
     urls:
     - vault-init-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-05T07:24:30.416558518Z"
+generated: "2024-06-05T07:50:01.308645874Z"
