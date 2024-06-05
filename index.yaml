@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   artifactory:
   - apiVersion: v2
-    created: "2024-06-05T07:55:54.503564234Z"
+    created: "2024-06-05T11:46:03.106684879Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -26,7 +26,7 @@ entries:
     version: 12.0.2
   esignet:
   - apiVersion: v2
-    created: "2024-06-05T07:55:54.506710491Z"
+    created: "2024-06-05T11:46:03.109814723Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -50,7 +50,7 @@ entries:
   esignet-init:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T07:55:54.508697191Z"
+    created: "2024-06-05T11:46:03.111254209Z"
     description: A Helm chart for Kubernetes
     digest: ba303588cf14169b34062de4e516262d7539f8688d74696d2226bfec02ffd665
     name: esignet-init
@@ -61,7 +61,7 @@ entries:
   esignet-preinit:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T07:55:54.510838925Z"
+    created: "2024-06-05T11:46:03.11329543Z"
     description: A Helm chart for Kubernetes
     digest: d19f80e72c765c34b66be9858a7e74f31500b7c43249ea56b3c8b84b6f151c00
     name: esignet-preinit
@@ -69,12 +69,62 @@ entries:
     urls:
     - esignet-preinit-0.1.0.tgz
     version: 0.1.0
+  kafka:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 3.2.1
+    created: "2024-06-05T11:46:03.123529459Z"
+    dependencies:
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache Kafka is a distributed streaming platform designed to build
+      real-time pipelines and can be used as a message broker or as a replacement
+      for a log aggregation solution for big data applications.
+    digest: 79849a75fdd9b40edb547cb966f574812e0597492396a2cc7df992141fd54e29
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kafka
+    icon: https://bitnami.com/assets/stacks/kafka/img/kafka-stack-220x234.png
+    keywords:
+    - kafka
+    - zookeeper
+    - streaming
+    - producer
+    - consumer
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: kafka
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/kafka
+    - https://kafka.apache.org/
+    urls:
+    - kafka-18.3.1.tgz
+    version: 18.3.1
+  kafka-ui:
+  - apiVersion: v2
+    appVersion: v0.4.0
+    created: "2024-06-05T11:46:03.124284796Z"
+    description: A Helm chart for kafka-UI
+    digest: a8e630de428d02c1b7acd165127edd7e08c33a0458d93fcc4a48a9fb31ce1f47
+    icon: https://github.com/provectus/kafka-ui/raw/master/documentation/images/kafka-ui-logo.png
+    name: kafka-ui
+    type: application
+    urls:
+    - kafka-ui-v0.4.2.tgz
+    version: v0.4.2
   keycloak:
   - annotations:
       category: DeveloperTools
     apiVersion: v2
     appVersion: 16.1.1
-    created: "2024-06-05T07:55:54.519634767Z"
+    created: "2024-06-05T11:46:03.134235581Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -107,7 +157,7 @@ entries:
   keycloak-init:
   - apiVersion: v2
     appVersion: 1.2.0
-    created: "2024-06-05T07:55:54.524585504Z"
+    created: "2024-06-05T11:46:03.137693154Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -131,7 +181,7 @@ entries:
     version: 12.0.1
   oidc-ui:
   - apiVersion: v2
-    created: "2024-06-05T07:55:54.527269106Z"
+    created: "2024-06-05T11:46:03.141287469Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -155,7 +205,7 @@ entries:
   postgres-init:
   - apiVersion: v2
     appVersion: 1.2.0
-    created: "2024-06-05T07:55:54.529542957Z"
+    created: "2024-06-05T11:46:03.144425886Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -179,7 +229,7 @@ entries:
     version: 12.0.1
   softhsm:
   - apiVersion: v2
-    created: "2024-06-05T07:55:54.531251489Z"
+    created: "2024-06-05T11:46:03.146146984Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -203,7 +253,7 @@ entries:
   sunbird-c-charts:
   - apiVersion: v2
     appVersion: 0.0.13
-    created: "2024-06-05T07:55:54.534119672Z"
+    created: "2024-06-05T11:46:03.148484791Z"
     description: A Helm chart for Sunbird RC
     digest: e390f2fb0758798f76bf1693dac1fbf23205528948cfbab33123a475fe29e864
     name: sunbird-c-charts
@@ -214,7 +264,7 @@ entries:
   sunbird-r-charts:
   - apiVersion: v2
     appVersion: 0.0.13
-    created: "2024-06-05T07:55:54.539309044Z"
+    created: "2024-06-05T11:46:03.153689565Z"
     description: A Helm chart for Sunbird RC
     digest: ff89976492f9ea3f8035b34d944505cb73a83c16ffbba9b8d849c0eb2d94c8d7
     name: sunbird-r-charts
@@ -225,7 +275,7 @@ entries:
   sunbird_rc_charts:
   - apiVersion: v2
     appVersion: 0.0.13
-    created: "2024-06-05T07:55:54.545096126Z"
+    created: "2024-06-05T11:46:03.160112555Z"
     description: A Helm chart for Sunbird RC
     digest: f407084a57cd7f945fe345b526151aef32fb91895c49ff7dd39730df73a89c08
     name: sunbird_rc_charts
@@ -236,7 +286,7 @@ entries:
   vault-init:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T07:55:54.545646479Z"
+    created: "2024-06-05T11:46:03.160714151Z"
     description: A Helm chart for Kubernetes
     digest: 75642f56bc737b214859480f91ee9cb0d1b0bb7e1674ee684ba0138f861e210b
     name: vault-init
@@ -244,4 +294,4 @@ entries:
     urls:
     - vault-init-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-05T07:55:54.501203611Z"
+generated: "2024-06-05T11:46:03.104218697Z"
