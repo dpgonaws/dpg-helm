@@ -1,8 +1,32 @@
 apiVersion: v1
 entries:
+  artifactory:
+  - apiVersion: v2
+    created: "2024-06-05T07:24:30.420658242Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart for MOSIP Artifactory
+    digest: 7e754bef1173b3b02af8051204dd98f8553730f64a895375a18e1f24009c8802
+    home: https://mosip.io
+    keywords:
+    - artifactory
+    - antivirus
+    - anti-virus
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: artifactory
+    type: application
+    urls:
+    - artifactory-12.0.2.tgz
+    version: 12.0.2
   esignet:
   - apiVersion: v2
-    created: "2024-06-05T06:08:49.932387096Z"
+    created: "2024-06-05T07:24:30.424092975Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -26,7 +50,7 @@ entries:
   esignet-charts:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T06:08:49.950879418Z"
+    created: "2024-06-05T07:24:30.439671645Z"
     description: A Helm chart for Kubernetes
     digest: 0497014c20d7758c3c9da3063eb0647ae0c84274eaca4ec1747bd74c928af75a
     name: esignet-charts
@@ -34,10 +58,45 @@ entries:
     urls:
     - esignet-charts-0.1.0.tgz
     version: 0.1.0
+  keycloak:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 16.1.1
+    created: "2024-06-05T07:24:30.451595301Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Keycloak is a high performance Java-based identity and access management
+      solution. It lets developers add an authentication layer to their applications
+      with minimum effort.
+    digest: c9985cb40e7af4e70a36bda57123de91af030a57ce3238bb0580b208a0234bb3
+    home: https://www.keycloak.org
+    icon: https://bitnami.com/assets/stacks/keycloak/img/keycloak-stack-220x234.png
+    keywords:
+    - keycloak
+    - access-management
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: keycloak
+    sources:
+    - https://github.com/bitnami/bitnami-docker-keycloak
+    - https://github.com/keycloak/keycloak
+    urls:
+    - keycloak-7.1.18.tgz
+    version: 7.1.18
   mosip:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T06:08:49.966321894Z"
+    created: "2024-06-05T07:24:30.46595769Z"
     description: A Helm chart for Kubernetes
     digest: 2a5a92edb0916876637ad24ff5b2d9f1df05f83a603580ec77ecfcb20b9727a0
     name: mosip
@@ -45,10 +104,33 @@ entries:
     urls:
     - mosip-0.1.0.tgz
     version: 0.1.0
+  softhsm:
+  - apiVersion: v2
+    created: "2024-06-05T07:24:30.468935255Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart for MOSIP Softhsm module
+    digest: b5166e26dafca21b737ab80b031e7fb4fc0765c47f5709a5424705a4287a5e5e
+    home: https://mosip.io
+    keywords:
+    - softhsm
+    - hsm
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: softhsm
+    type: application
+    urls:
+    - softhsm-12.0.1.tgz
+    version: 12.0.1
   sunbird-c-charts:
   - apiVersion: v2
     appVersion: 0.0.13
-    created: "2024-06-05T06:08:49.969526137Z"
+    created: "2024-06-05T07:24:30.471606183Z"
     description: A Helm chart for Sunbird RC
     digest: e390f2fb0758798f76bf1693dac1fbf23205528948cfbab33123a475fe29e864
     name: sunbird-c-charts
@@ -59,7 +141,7 @@ entries:
   sunbird-r-charts:
   - apiVersion: v2
     appVersion: 0.0.13
-    created: "2024-06-05T06:08:49.976188507Z"
+    created: "2024-06-05T07:24:30.476425805Z"
     description: A Helm chart for Sunbird RC
     digest: ff89976492f9ea3f8035b34d944505cb73a83c16ffbba9b8d849c0eb2d94c8d7
     name: sunbird-r-charts
@@ -70,7 +152,7 @@ entries:
   sunbird_rc_charts:
   - apiVersion: v2
     appVersion: 0.0.13
-    created: "2024-06-05T06:08:49.98521824Z"
+    created: "2024-06-05T07:24:30.483891103Z"
     description: A Helm chart for Sunbird RC
     digest: f407084a57cd7f945fe345b526151aef32fb91895c49ff7dd39730df73a89c08
     name: sunbird_rc_charts
@@ -81,7 +163,7 @@ entries:
   vault-init:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T06:08:49.987387311Z"
+    created: "2024-06-05T07:24:30.484460638Z"
     description: A Helm chart for Kubernetes
     digest: 75642f56bc737b214859480f91ee9cb0d1b0bb7e1674ee684ba0138f861e210b
     name: vault-init
@@ -89,4 +171,4 @@ entries:
     urls:
     - vault-init-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-05T06:08:49.925831715Z"
+generated: "2024-06-05T07:24:30.416558518Z"
