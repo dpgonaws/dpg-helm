@@ -14,7 +14,7 @@ image:
   repository: dpgonaws/esignet-init
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "0.0.5"
+  tag: "0.0.6"
   envVars:
     AWS_KAFKA_ARN: ""
     DB_HOSTNAME: ""
