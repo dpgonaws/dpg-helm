@@ -1,14 +1,14 @@
-# Default values for keycloak-preinit.
+# Default values for esignet-bootstrap.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: dpgonaws/keycloak-preinit
+  repository: dpgonaws/esignet-bootstrap
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "0.0.7"
+  tag: "0.0.1"
   envVars:
     HOST: ""
     DATABASE: "postgres"
