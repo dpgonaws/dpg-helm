@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   artifactory:
   - apiVersion: v2
-    created: "2024-07-04T09:04:30.720138557Z"
+    created: "2024-07-09T15:02:58.412025549Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -26,7 +26,7 @@ entries:
     version: 12.0.2
   esignet:
   - apiVersion: v2
-    created: "2024-07-04T09:04:30.723428068Z"
+    created: "2024-07-09T15:02:58.416578599Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -50,7 +50,7 @@ entries:
   esignet-bootstrap:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-07-04T09:04:30.725045579Z"
+    created: "2024-07-09T15:02:58.419334291Z"
     description: A Helm chart for Kubernetes
     digest: caf151c451e3221833495c30ca4f9a18a977c309635f9b86893f51817b4d61df
     name: esignet-bootstrap
@@ -61,7 +61,7 @@ entries:
   esignet-init:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-07-04T09:04:30.726490288Z"
+    created: "2024-07-09T15:02:58.422100434Z"
     description: A Helm chart for Kubernetes
     digest: 62aad6e4e6d03081b2f399978406402812a442f8f35bbb8cc42a79699801900a
     name: esignet-init
@@ -72,7 +72,7 @@ entries:
   esignet-preinit:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-07-04T09:04:30.727915425Z"
+    created: "2024-07-09T15:02:58.424976855Z"
     description: A Helm chart for Kubernetes
     digest: 77e2da10bc40e1e20c8396fc40b694eb18b3e865835fddbdfa47e9e169d2ae27
     name: esignet-preinit
@@ -83,7 +83,7 @@ entries:
   inji-verify:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-07-04T09:04:30.728473471Z"
+    created: "2024-07-09T15:02:58.426406648Z"
     description: A Helm chart for Kubernetes
     digest: ebe49bfe62a9d1e60c13a4242af36ef49c5a9d176c578f124aeacb48f1a05efc
     name: inji-verify
@@ -94,7 +94,7 @@ entries:
   inji-web:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-07-04T09:04:30.729333253Z"
+    created: "2024-07-09T15:02:58.427707334Z"
     description: A Helm chart for Kubernetes
     digest: d7be2ed7a16d986d7be9d3c97922bb2acc93fc02ca9216ccce7923a40e0a0c0f
     name: inji-web
@@ -102,12 +102,23 @@ entries:
     urls:
     - inji-web-0.1.0.tgz
     version: 0.1.0
+  inji_sunbird_rc_charts:
+  - apiVersion: v2
+    appVersion: 0.0.13
+    created: "2024-07-09T15:02:58.430951478Z"
+    description: A Helm chart for Sunbird RC
+    digest: c24684f4802757ae14b82dd0cf1d0f8f5c8797ffa97b95b9191ed49ccdbe5281
+    name: inji_sunbird_rc_charts
+    type: application
+    urls:
+    - inji_sunbird_rc_charts-2.0.0.tgz
+    version: 2.0.0
   kafka:
   - annotations:
       category: Infrastructure
     apiVersion: v2
     appVersion: 3.2.1
-    created: "2024-07-04T09:04:30.739485574Z"
+    created: "2024-07-09T15:02:58.442222076Z"
     dependencies:
     - condition: zookeeper.enabled
       name: zookeeper
@@ -143,7 +154,7 @@ entries:
   kafka-ui:
   - apiVersion: v2
     appVersion: v0.4.0
-    created: "2024-07-04T09:04:30.740257431Z"
+    created: "2024-07-09T15:02:58.444426541Z"
     description: A Helm chart for kafka-UI
     digest: a8e630de428d02c1b7acd165127edd7e08c33a0458d93fcc4a48a9fb31ce1f47
     icon: https://github.com/provectus/kafka-ui/raw/master/documentation/images/kafka-ui-logo.png
@@ -157,7 +168,7 @@ entries:
       category: DeveloperTools
     apiVersion: v2
     appVersion: 16.1.1
-    created: "2024-07-04T09:04:30.753117402Z"
+    created: "2024-07-09T15:02:58.454708848Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -190,7 +201,7 @@ entries:
   keycloak-init:
   - apiVersion: v2
     appVersion: 1.2.0
-    created: "2024-07-04T09:04:30.756723805Z"
+    created: "2024-07-09T15:02:58.46009371Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -215,7 +226,7 @@ entries:
   mimoto:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-07-04T09:04:30.757385527Z"
+    created: "2024-07-09T15:02:58.462241535Z"
     description: A Helm chart for Kubernetes
     digest: 1cda69e541034661b074453b2f8020bb985ee72c4834bbc80eda0d365f42691e
     name: mimoto
@@ -225,7 +236,7 @@ entries:
     version: 0.1.0
   oidc-ui:
   - apiVersion: v2
-    created: "2024-07-04T09:04:30.760213117Z"
+    created: "2024-07-09T15:02:58.466639314Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -249,7 +260,7 @@ entries:
   postgres-init:
   - apiVersion: v2
     appVersion: 1.2.0
-    created: "2024-07-04T09:04:30.763953693Z"
+    created: "2024-07-09T15:02:58.470205604Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -273,7 +284,7 @@ entries:
     version: 12.0.1
   softhsm:
   - apiVersion: v2
-    created: "2024-07-04T09:04:30.765689124Z"
+    created: "2024-07-09T15:02:58.473026565Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -297,7 +308,7 @@ entries:
   sunbird-c-charts:
   - apiVersion: v2
     appVersion: 0.0.13
-    created: "2024-07-04T09:04:30.768017967Z"
+    created: "2024-07-09T15:02:58.476133548Z"
     description: A Helm chart for Sunbird RC
     digest: e390f2fb0758798f76bf1693dac1fbf23205528948cfbab33123a475fe29e864
     name: sunbird-c-charts
@@ -308,7 +319,7 @@ entries:
   sunbird-r-charts:
   - apiVersion: v2
     appVersion: 0.0.13
-    created: "2024-07-04T09:04:30.772806124Z"
+    created: "2024-07-09T15:02:58.483486711Z"
     description: A Helm chart for Sunbird RC
     digest: ff89976492f9ea3f8035b34d944505cb73a83c16ffbba9b8d849c0eb2d94c8d7
     name: sunbird-r-charts
@@ -319,7 +330,7 @@ entries:
   sunbird_rc_charts:
   - apiVersion: v2
     appVersion: 0.0.13
-    created: "2024-07-04T09:04:30.779575141Z"
+    created: "2024-07-09T15:02:58.490484506Z"
     description: A Helm chart for Sunbird RC
     digest: f407084a57cd7f945fe345b526151aef32fb91895c49ff7dd39730df73a89c08
     name: sunbird_rc_charts
@@ -330,7 +341,7 @@ entries:
   vault-init:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-07-04T09:04:30.780177891Z"
+    created: "2024-07-09T15:02:58.491735052Z"
     description: A Helm chart for Kubernetes
     digest: 75642f56bc737b214859480f91ee9cb0d1b0bb7e1674ee684ba0138f861e210b
     name: vault-init
@@ -338,4 +349,4 @@ entries:
     urls:
     - vault-init-0.1.0.tgz
     version: 0.1.0
-generated: "2024-07-04T09:04:30.717031939Z"
+generated: "2024-07-09T15:02:58.407144775Z"
