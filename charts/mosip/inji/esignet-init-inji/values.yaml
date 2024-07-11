@@ -11,16 +11,20 @@ image:
   tag: ""
 
 image:
-  repository: dpgonaws/esignet-init
+  repository: dpgonaws/esignet-init-inji
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "0.0.4"
+  tag: "0.0.7"
   envVars:
     AWS_KAFKA_ARN: ""
     DB_HOSTNAME: ""
     DB_PORT: "5432"
     DB_USERNAME: "postgres"
     DB_PASSWORD: ""
+    SBRC_RELEASE: ""
+    SBRC_NAMESPACE: ""
+    SBRC_DID: ""
+    SBRC_SCHEMA_ID: ""
 
 imagePullSecrets: []
 nameOverride: ""
