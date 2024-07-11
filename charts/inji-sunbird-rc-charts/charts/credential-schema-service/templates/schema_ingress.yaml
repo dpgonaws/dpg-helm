@@ -7,6 +7,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80},{"HTTPS":443}]'
     alb.ingress.kubernetes.io/group.name: {{ .Values.global.alb.name }}
+    alb.ingress.kubernetes.io/healthcheck-path: {{ .Values.global.alb.health }}
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/target-group-attributes: stickiness.enabled=true,stickiness.lb_cookie.duration_seconds=3600
     ingress.kubernetes.io/rewrite-target: /   # Added rewrite annotation here for / to /selfservice
