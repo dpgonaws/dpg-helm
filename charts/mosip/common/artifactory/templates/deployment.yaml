@@ -55,6 +55,15 @@ spec:
       securityContext: {{- omit .Values.podSecurityContext "enabled" | toYaml | nindent 8 }}
       {{- end }}
       initContainers:
+        {{- if .Values.inji.enabled }}
+        - name: install
+          image: busybox:1.28
+          command: ["/bin/sh", "-c","wget -O '/work-dir/esignet-i18n-bundle.zip' {{ .Values.assets.url }}"]
+          volumeMounts:
+          - name: workdir
+            mountPath: "/work-dir"
+        {{- end }}
+
         {{- if and .Values.volumePermissions.enabled .Values.persistence.enabled }}
         - name: volume-permissions
           image: {{ include "artifactory.volumePermissions.image" . }}
@@ -107,6 +116,15 @@ spec:
           {{- else if .Values.customReadinessProbe }}
           readinessProbe: {{- include "common.tplvalues.render" (dict "value" .Values.customReadinessProbe "context" $) | nindent 12 }}
           {{- end }}
+          {{- if .Values.inji.enabled }}
+          volumeMounts:
+            - mountPath: "/usr/share/nginx/html/artifactory/libs-release-local/i18n"
+              name: workdir
+          {{- end }}
         {{- if .Values.sidecars }}
         {{- include "common.tplvalues.render" ( dict "value" .Values.sidecars "context" $) | nindent 8 }}
         {{- end }}
+      volumes:
+        - name: workdir
+          emptyDir: {}
+
