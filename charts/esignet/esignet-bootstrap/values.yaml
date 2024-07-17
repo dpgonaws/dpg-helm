@@ -102,3 +102,10 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+domain:
+  name: sandbox.demodpgs.net
+  mosipApiInternalHost: api-internal.sandbox.demodpgs.net
+  mosipApiHost: api.sanbox.demodpgs.net
+  mosipIamExternalHost: iamesignet.sandbox.demodpgs.net
+  mosipEsignetHost: esignet.sandbox.demodpgs.net
